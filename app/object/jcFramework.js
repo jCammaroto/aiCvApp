@@ -11,9 +11,9 @@
 */
 
 // Initialize Framework and create a global execution context
-;(function (global, $) {
+; (function (global, $) {
 
-    
+
     // Add animate css to jQuery
     $.fn.extend({
         animateCss: function (animationName) {
@@ -24,7 +24,7 @@
             return this;
         }
     });
-    
+
     // Create my custon new object
     var JcFramework = function (language) {
         return new JcFramework.init(language);
@@ -64,7 +64,7 @@
             }
 
         },
-        setLanguage: function(lang) {
+        setLanguage: function (lang) {
             // set the language
             this.language = lang;
 
@@ -73,13 +73,30 @@
 
             // make chainable
             return this;
+        },
+        getFromLocalStorage: function (key) {
+            if(global.localStorage) {
+                var value = global.localStorage.getItem(key);
+                this.user = value;
+            }
+            return this;
+        },
+        setInLocalStorage: function (key, value) {
+            if (global.localStorage) {
+                global.localStorage.setItem(key, value);
+                this.user = value;
+            }
+            return this;
+            
         }
+
     };
 
     // the actual object is created here, allowing us to 'new' an object without calling 'new'
     JcFramework.init = function (language) {
         var self = this;
         self.language = language || "en"; //navigator.language || navigator.userLanguage;
+        self.user = global.localStorage.getItem(USERNAME) ||  "";
         self.validate();
     };
 

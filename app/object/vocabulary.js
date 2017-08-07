@@ -18,6 +18,6 @@ var vocabulary = {
         it: "Ciao $name, bentornato! Di cosa hai bisogno ?",
     },
     greetingsArrayPresentation: [
-        'Hello.', 'Ciao', 'Hallo.', 'Bonjour.', 'Hola.', 'こんにちは'
+        'Hello.', 'Ciao.', 'Hallo.', 'Bonjour.', 'Hola.', 'こんにちは'
     ]
 };
