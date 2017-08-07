@@ -13,11 +13,12 @@
 
     // set Timeout to cancel function and continue with our presentation.
     setTimeout(function () {
-        _alice.applyGreeting = null;
+        _alice.removeGreeting("#initialMessage");
         if(_jc.user === "") {
-            _alice.writeSomeText("#initialMessage", vocabulary.newUser[_jc.language]);
+            _alice.writeSomeText("#newMessage", vocabulary.newUser[_jc.language]);
+            $("#inputBox").show().animateCss("fadeIn");
         }
-        _alice.newUserRegistration("angelo", _jc);
+        //_alice.newUserRegistration("angelo", _jc);
     }, 4400);
 
 }(window));
