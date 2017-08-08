@@ -97,6 +97,7 @@
         var self = this;
         self.language = language || "en"; //navigator.language || navigator.userLanguage;
         self.user = global.localStorage.getItem(USERNAME) ||  "";
+        self.state = null;
         self.validate();
     };
 
